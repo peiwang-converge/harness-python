@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_harness_python_1697414614596-pr-trigger-input-set
+  identifier: Build_harness_python_1697414614596prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: peitest
+  pipeline:
+    identifier: Build_harness_python_1697414614596
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
