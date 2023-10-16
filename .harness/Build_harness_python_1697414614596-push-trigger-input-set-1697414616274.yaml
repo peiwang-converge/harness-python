@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_harness_python_1697414614596-push-trigger-input-set
+  identifier: Build_harness_python_1697414614596pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: peitest
+  pipeline:
+    identifier: Build_harness_python_1697414614596
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
