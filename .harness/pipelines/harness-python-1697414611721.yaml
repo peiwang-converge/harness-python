@@ -27,7 +27,7 @@ pipeline:
                       echo "Welcome to Harness CI"
                       python -m pip install --upgrade pip
                       pip install  pytest
-                      !pip3 install --ignore-installed embedchain
+                      !pip install --ignore-installed embedchain
                       if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           platform:
             arch: Amd64
