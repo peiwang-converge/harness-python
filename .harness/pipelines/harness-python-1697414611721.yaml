@@ -8,7 +8,7 @@ pipeline:
       codebase:
         build: <+input>
         connectorRef: account.Github_OAuth_1697414062130
-        repoName: harness-python
+        repoName: peiwang-converge/harness-python
   stages:
     - stage:
         identifier: build
