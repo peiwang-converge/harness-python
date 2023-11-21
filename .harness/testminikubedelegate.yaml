@@ -48,7 +48,8 @@ pipeline:
             type: KubernetesDirect
             spec:
               connectorRef: org.k8sawsminikube
-              namespace: test-ns
+              namespace: nothing
+              automountServiceAccountToken: true
               nodeSelector: {}
               os: Linux
           execution:
