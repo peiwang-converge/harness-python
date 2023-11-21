@@ -14,7 +14,7 @@ pipeline:
     - stage:
         name: test
         identifier: test
-        description: ""
+        description: "this is a testtest test"
         type: CI
         spec:
           cloneCodebase: true
