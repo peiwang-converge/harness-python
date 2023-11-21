@@ -1,5 +1,5 @@
 pipeline:
-  name: test-minikube-delegate-test
+  name: test-minikube-delegate
   identifier: testminikubedelegate
   projectIdentifier: TutorialPei
   orgIdentifier: default
@@ -14,7 +14,7 @@ pipeline:
     - stage:
         name: test
         identifier: test
-        description: "this is a testtest test"
+        description: ""
         type: CI
         spec:
           cloneCodebase: true
@@ -37,3 +37,29 @@ pipeline:
                     image: python:3.10.6-alpine
                     shell: Sh
                     command: echo hello
+    - stage:
+        name: build
+        identifier: build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: org.k8sawsminikube
+              namespace: test-ns
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    connectorRef: dockerpeiwang
+                    image: hello-world
+                    shell: Sh
+                    command: echo test
+                  description: test
