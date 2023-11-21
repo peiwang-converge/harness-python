@@ -1,0 +1,39 @@
+pipeline:
+  name: minikube delegate test
+  identifier: minikube_delegate_test
+  projectIdentifier: TutorialPei
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: github_connector
+        repoName: harness-python
+        build: <+input>
+  stages:
+    - stage:
+        name: build
+        identifier: build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: org.k8sawsminikube
+              namespace: test-ns
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    connectorRef: dockerpeiwang
+                    image: python:3.10.6-alpine
+                    shell: Sh
+                    command: echo test
