@@ -48,7 +48,7 @@ pipeline:
             type: KubernetesDirect
             spec:
               connectorRef: org.k8sawsminikube
-              namespace: nothing
+              namespace: test-ns
               automountServiceAccountToken: true
               nodeSelector: {}
               os: Linux
@@ -60,7 +60,7 @@ pipeline:
                   identifier: Run_1
                   spec:
                     connectorRef: dockerpeiwang
-                    image: hello-world
+                    image: python:3.10.6-alpine
                     shell: Sh
                     command: echo test
                   description: test
