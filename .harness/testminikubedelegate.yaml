@@ -1,5 +1,5 @@
 pipeline:
-  name: test-minikube-delegate
+  name: test-minikube-delegate-test
   identifier: testminikubedelegate
   projectIdentifier: TutorialPei
   orgIdentifier: default
